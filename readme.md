@@ -12,7 +12,7 @@ Same as single line (copy-paste me):
 git clone git@github.com:brillout/vue-renderToString-bug && cd vue-renderToString-bug/ && pnpm install && pnpm run build && pnpm run preview
 ```
 
-Now go to [localhost:3000/about](http://localhost:3000/about) and observe the logs.
+Go to [localhost:3000/about](http://localhost:3000/about) and observe the logs.
 
 What happens:
 
@@ -27,6 +27,6 @@ What is expected instead:
 renderToString() error
 ```
 
-The `renderToString()` call in [`/renderer/_default.page.server.js`](/renderer/_default.page.server.js) is expected to throw an error because [`/pages/about/index.page.vue`](/pages/about/index.page.vue) throws an error.
+The `renderToString()` call in [`/renderer/_default.page.server.js#L15`](/renderer/_default.page.server.js#L15) is expected to throw an error because [`/pages/about/index.page.vue#L6`](/pages/about/index.page.vue#L6) throws an error.
 
-Note Vue's `renderToString()` erroneous behavior only happens in production. (You can try `$ pnpm run dev` and see how things behave as expected.)
+Note Vue's `renderToString()` erroneous behavior only happens in production. (You can try `$ pnpm run dev` to see how things behave as expected.)
